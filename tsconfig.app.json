@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Absolute paths */
+    "paths": {
+      "src/assets/*": ["./src/assets/*"],
+      "src/components/*": ["./src/components/*"],
+      "src/features/*": ["./src/features/*"],
+      "src/form-schemas/*": ["./src/form-schemas/*"],
+      "src/hooks/*": ["./src/hooks/*"],
+      "src/layouts/*": ["./src/layouts/*"],
+      "src/locales/*": ["./src/locales/*"],
+      "src/mocks/*": ["./src/mocks/*"],
+      "src/pages/*": ["./src/pages/*"],
+      "src/routes/*": ["./src/routes/*"],
+      "src/store/*": ["./src/store/*"],
+      "src/test-utils/*": ["./src/test-utils/*"],
+      "src/theme/*": ["./src/theme/*"],
+      "src/types/*": ["./src/types/*"],
+      "src/utils/*": ["./src/utils/*"],
+      "src/*": ["./src/*"]
+    },
+
+    "types": ["vitest/globals", "vite/client"]
+  },
+  "include": ["src", "vite.config.ts"]
+}

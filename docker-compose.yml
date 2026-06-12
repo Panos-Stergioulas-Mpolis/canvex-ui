@@ -1,0 +1,9 @@
+services:
+  frontend:
+    container_name: "canvex-ui"
+    build:
+      context: .
+      args:
+
+    ports:
+      - 3000:80
