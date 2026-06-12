@@ -2,6 +2,7 @@
 import { Suspense, lazy } from "react";
 import { Outlet } from "react-router-dom";
 import LoadingScreen from "src/components/loading-screen";
+import ErrorLayout from "src/layouts/error-layout";
 
 import paths from "src/routes/routes";
 
@@ -13,7 +14,9 @@ const errorRoutes = [
     path: paths.root,
     element: (
       <Suspense fallback={<LoadingScreen />}>
-        <Outlet />
+        <ErrorLayout>
+          <Outlet />
+        </ErrorLayout>
       </Suspense>
     ),
     children: [

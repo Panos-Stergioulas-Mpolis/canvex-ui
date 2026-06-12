@@ -91,10 +91,10 @@ const typography: TypographyVariantsOptions = {
     textTransform: "uppercase",
   },
   button: {
-    fontWeight: 600,
-    lineHeight: 1.1,
+    fontFamily: primaryFont,
+    textTransform: "unset",
+    fontWeight: 500,
     fontSize: pxToRem(16),
-    textTransform: "none",
   },
 };
 
