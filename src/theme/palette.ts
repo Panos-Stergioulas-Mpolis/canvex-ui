@@ -229,6 +229,10 @@ const palette = {
     neutral: surface[500], // #13142A — canvas nodes, input bg
   },
 
+  border: {
+    default: surface[50],
+  },
+
   divider: "rgba(255, 255, 255, 0.07)",
 
   action: {

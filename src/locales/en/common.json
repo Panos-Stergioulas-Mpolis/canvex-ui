@@ -1,5 +1,17 @@
 {
   "buttons": {
     "returnHome": "Return Home"
-  }
+  },
+  "layouts": {
+    "auth": {
+      "title": "Your team's creative hub.",
+      "caption": "Schedules, diagrams, whiteboards, and chat — all in one place for your team.",
+      "leftSideItems": {
+        "dashboard": "Shared whiteboards & diagrams",
+        "calendar": "Team schedules & timelines",
+        "chat": "Real-time group chat"
+      }
+    }
+  },
+  "copyright": "© {{year}} Canvex · All rights reserved"
 }

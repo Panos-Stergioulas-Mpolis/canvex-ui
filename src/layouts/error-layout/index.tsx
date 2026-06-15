@@ -32,7 +32,7 @@ const ErrorLayout: FC<PropsWithChildren> = (props) => {
           borderRadius: 3,
           gap: 2,
           border: "1px solid",
-          borderColor: "surface.50",
+          borderColor: "border.default",
         }}
       >
         {children}

@@ -7,7 +7,7 @@ const SignInPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.title.signIn", { ns: "meta" })}</title>
+        <title>{t("titles.signIn", { ns: "meta" })}</title>
       </Helmet>
 
       <SignInView />
