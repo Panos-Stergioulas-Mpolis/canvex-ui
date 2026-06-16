@@ -10,7 +10,10 @@ type LogoProps = {
 const Logo: FC<LogoProps> = (props) => {
   const { size, includeLabel } = props;
   return (
-    <Stack direction="row" sx={{ alignItems: "center", gap: 1.5 }}>
+    <Stack
+      direction="row"
+      sx={{ alignItems: "center", gap: 1.5, color: "common.white" }}
+    >
       <Stack
         sx={{
           backgroundColor: "primary.main",

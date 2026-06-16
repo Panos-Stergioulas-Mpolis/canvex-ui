@@ -29,7 +29,7 @@ const AuthLayout: FC<PropsWithChildren> = (props) => {
             color: "primary.light",
           }}
         >
-          <Icon icon="mdi-light:view-dashboard" width={20} />
+          <Icon icon="material-symbols:dashboard-outline-rounded" width={20} />
         </Stack>
       ),
       title: t("layouts.auth.leftSideItems.dashboard"),

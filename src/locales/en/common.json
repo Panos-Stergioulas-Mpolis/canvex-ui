@@ -13,5 +13,15 @@
       }
     }
   },
-  "copyright": "© {{year}} Canvex · All rights reserved"
+  "copyright": "© {{year}} Canvex · All rights reserved",
+  "navItems": {
+    "labels": {
+      "board": "Board",
+      "calendar": "Calendar",
+      "chat": "Chat",
+      "users": "Users",
+      "userList": "User List",
+      "userRole": "User Role"
+    }
+  }
 }

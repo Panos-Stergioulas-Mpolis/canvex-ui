@@ -38,7 +38,7 @@ const ErrorLayout: FC<PropsWithChildren> = (props) => {
         {children}
         <Button
           component={RouterLink}
-          to={paths.root}
+          to={paths.board}
           size="large"
           variant="contained"
           color="primary"

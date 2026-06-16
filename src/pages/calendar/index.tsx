@@ -1,18 +1,18 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import Home from "src/features/home";
+import CalendarView from "src/features/calendar";
 
-const HomePage = () => {
+const CalendarPage = () => {
   const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>{t("titles.home", { ns: "meta" })}</title>
+        <title>{t("titles.calendar", { ns: "meta" })}</title>
       </Helmet>
 
-      <Home />
+      <CalendarView />
     </>
   );
 };
 
-export default HomePage;
+export default CalendarPage;

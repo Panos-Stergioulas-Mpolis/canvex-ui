@@ -5,6 +5,11 @@ const paths = {
   signIn: "/sign-in",
   signUp: "/sign-up",
   forgotPassword: "/forgot-password",
+  board: "/board",
+  calendar: "/calendar",
+  chat: "/chat",
+  userList: "/user-list",
+  userRole: "/user-role",
 };
 
 export default paths;
