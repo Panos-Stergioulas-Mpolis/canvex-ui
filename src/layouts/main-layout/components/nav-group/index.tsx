@@ -43,7 +43,11 @@ const NavGroup: FC<NavGroupProps> = (props) => {
 
   const checkIfIsSelected = () => {
     return (
-      isButtonOpened || subItems.find((item) => item.link === location.pathname)
+      (isOpen && isButtonOpened) ||
+      subItems.find((item) => item.link === location.pathname) ||
+      (!isOpen &&
+        isButtonOpened &&
+        subItems.find((item) => item.link === location.pathname))
     );
   };
   return (

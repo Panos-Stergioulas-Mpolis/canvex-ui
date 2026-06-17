@@ -1,15 +1,15 @@
 import { render, screen } from "src/test-utils/custom-render";
-import HomePage from ".";
+import BoardPage from ".";
 
-vi.mock("src/features/home", () => ({
-  default: () => <div>home view</div>,
+vi.mock("src/features/board", () => ({
+  default: () => <div>board view</div>,
 }));
 
-describe("<HomePage />", () => {
-  it("should render the home view", () => {
-    render(<HomePage />);
+describe("<BoardPage />", () => {
+  it("should render the board view", () => {
+    render(<BoardPage />);
 
-    const view = screen.getByText(/home view/i);
+    const view = screen.getByText(/board view/i);
     expect(view).toBeInTheDocument();
   });
 });

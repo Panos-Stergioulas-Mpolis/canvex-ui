@@ -68,6 +68,7 @@ const SideBar = () => {
   return (
     <Box sx={{ display: "flex", position: "relative" }}>
       <IconButton
+        aria-label="toggle-side-bar"
         onClick={toggle}
         sx={{
           position: "absolute",

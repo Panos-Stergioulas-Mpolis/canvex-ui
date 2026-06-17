@@ -1,11 +1,11 @@
 import { render, screen } from "src/test-utils/custom-render";
-import HomeView from ".";
+import BoardView from ".";
 
-describe("<HomeView />", () => {
+describe("<BoardView />", () => {
   it("should render correctly", () => {
-    render(<HomeView />);
+    render(<BoardView />);
 
-    const view = screen.getByText(/home/i);
+    const view = screen.getByText(/board/i);
     expect(view).toBeInTheDocument();
   });
 });
