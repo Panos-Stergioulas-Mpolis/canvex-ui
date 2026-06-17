@@ -3,6 +3,7 @@
 import { Suspense, lazy } from "react";
 import { Outlet } from "react-router-dom";
 import LoadingScreen from "src/components/loading-screen";
+import AuthLayout from "src/layouts/auth-layout";
 
 import paths from "src/routes/routes";
 
@@ -15,7 +16,9 @@ const authRoutes = [
     path: paths.root,
     element: (
       <Suspense fallback={<LoadingScreen />}>
-        <Outlet />
+        <AuthLayout>
+          <Outlet />
+        </AuthLayout>
       </Suspense>
     ),
     children: [

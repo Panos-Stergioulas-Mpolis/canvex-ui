@@ -1,8 +1,12 @@
 {
   "titles": {
-    "home": "Canvex",
+    "board": "Canvex",
     "signIn": "Sign in",
     "signUp": "Sign up",
-    "forgotPassword": "Forgot password"
+    "forgotPassword": "Forgot password",
+    "calendar": "Calendar",
+    "chat": "Chat",
+    "userList": "User list",
+    "userRole": "User role"
   }
 }

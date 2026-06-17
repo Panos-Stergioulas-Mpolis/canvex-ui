@@ -2,20 +2,33 @@
 import { Suspense, lazy } from "react";
 import { Outlet } from "react-router-dom";
 import LoadingScreen from "src/components/loading-screen";
+import MainLayout from "src/layouts/main-layout";
 
 import paths from "src/routes/routes";
 
-const HomePage = lazy(() => import("src/pages/home"));
+const BoardPage = lazy(() => import("src/pages/board"));
+const CalendarPage = lazy(() => import("src/pages/calendar"));
+const ChatPage = lazy(() => import("src/pages/chat"));
+const UserListPage = lazy(() => import("src/pages/user-list"));
+const UserRolePage = lazy(() => import("src/pages/user-role"));
 
 const mainRoutes = [
   {
     path: paths.root,
     element: (
       <Suspense fallback={<LoadingScreen />}>
-        <Outlet />
+        <MainLayout>
+          <Outlet />
+        </MainLayout>
       </Suspense>
     ),
-    children: [{ index: true, element: <HomePage /> }],
+    children: [
+      { path: paths.board, element: <BoardPage /> },
+      { path: paths.chat, element: <ChatPage /> },
+      { path: paths.calendar, element: <CalendarPage /> },
+      { path: paths.userList, element: <UserListPage /> },
+      { path: paths.userRole, element: <UserRolePage /> },
+    ],
   },
 ];
 
