@@ -1,6 +1,10 @@
 {
   "buttons": {
-    "returnHome": "Return Home"
+    "returnHome": "Return Home",
+    "signIn": "Sign in",
+    "forgotPassword": "Forgot password?",
+    "continueWithGoogle": "Continue with Google",
+    "signUp": "Sign up"
   },
   "layouts": {
     "auth": {
@@ -23,5 +27,15 @@
       "userList": "User List",
       "userRole": "User Role"
     }
+  },
+  "signIn": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to continue to your workspace",
+    "labels": {
+      "email": "Email address *",
+      "password": "Password *"
+    },
+    "or": "or",
+    "dontHaveAnAccount": "Don't have an account?"
   }
 }
