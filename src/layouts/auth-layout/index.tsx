@@ -110,7 +110,7 @@ const AuthLayout: FC<PropsWithChildren> = (props) => {
           </Typography>
         </Stack>
       )}
-      <Stack sx={{ p: 5, width: "100%" }} id="right-side">
+      <Stack sx={{ p: 5, width: "100%", alignItems: "center" }} id="right-side">
         {children}
       </Stack>
     </Stack>

@@ -1,1 +1,9 @@
-{}
+{
+  "email": {
+    "required": "Email address is required",
+    "invalid": "Enter a valid email address"
+  },
+  "password": {
+    "min": "Password must be at least 8 characters"
+  }
+}

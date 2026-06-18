@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.14.1",
     "@fontsource/dm-sans": "^5.2.8",
     "@fontsource/syne": "^5.2.7",
+    "@hookform/resolvers": "^5.4.0",
     "@mui/material": "^9.0.1",
     "@mui/types": "^9.0.0",
     "@reduxjs/toolkit": "^2.12.0",

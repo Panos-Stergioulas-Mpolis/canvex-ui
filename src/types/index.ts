@@ -4,3 +4,8 @@ export type MenuItemsType = {
   children?: { label: string; link: string }[];
   link?: string;
 };
+
+export type SignInInputs = {
+  email: string;
+  password: string;
+};
