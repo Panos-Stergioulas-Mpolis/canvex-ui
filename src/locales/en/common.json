@@ -4,7 +4,14 @@
     "signIn": "Sign in",
     "forgotPassword": "Forgot password?",
     "continueWithGoogle": "Continue with Google",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "today": "Today",
+    "previous": "Previous",
+    "next": "Next",
+    "month": "Month",
+    "week": "Week",
+    "day": "Day",
+    "agenda": "Agenda"
   },
   "layouts": {
     "auth": {
@@ -39,13 +46,6 @@
     "dontHaveAnAccount": "Don't have an account?"
   },
   "calendar": {
-    "today": "Today",
-    "previous": "Previous",
-    "next": "Next",
-    "month": "Month",
-    "week": "Week",
-    "day": "Day",
-    "agenda": "Agenda",
     "date": "Date",
     "time": "Time",
     "event": "Event",

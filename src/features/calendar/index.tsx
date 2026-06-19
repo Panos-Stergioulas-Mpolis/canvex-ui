@@ -2,6 +2,7 @@ import {
   Calendar,
   dateFnsLocalizer,
   type stringOrDate,
+  type ToolbarProps,
   type View,
 } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay, getTime } from "date-fns";
@@ -9,8 +10,9 @@ import { enUS } from "date-fns/locale/en-US";
 import { Stack } from "@mui/material";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Toolbar from "./components/toolbar";
 
 const locales = {
   en: enUS,
@@ -60,6 +62,21 @@ const CalendarView = () => {
 
   const onView = useCallback((newView: View) => setView(newView), [setView]);
 
+  const components = useMemo(() => {
+    return {
+      toolbar: (
+        data: ToolbarProps<
+          {
+            title: string;
+            start: Date;
+            end: Date;
+          },
+          object
+        >,
+      ) => <Toolbar {...data} />,
+    };
+  }, []);
+
   return (
     <Stack sx={{ width: "100%", p: 4 }}>
       <Calendar
@@ -74,6 +91,7 @@ const CalendarView = () => {
         onView={onView}
         defaultDate={date}
         onNavigate={onNavigate}
+        components={components}
       />
     </Stack>
   );
