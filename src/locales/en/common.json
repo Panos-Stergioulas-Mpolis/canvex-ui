@@ -37,5 +37,18 @@
     },
     "or": "or",
     "dontHaveAnAccount": "Don't have an account?"
+  },
+  "calendar": {
+    "today": "Today",
+    "previous": "Previous",
+    "next": "Next",
+    "month": "Month",
+    "week": "Week",
+    "day": "Day",
+    "agenda": "Agenda",
+    "date": "Date",
+    "time": "Time",
+    "event": "Event",
+    "noEventsInRange": "No events in range"
   }
 }
