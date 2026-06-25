@@ -1,13 +1,15 @@
 import {
   Calendar,
   dateFnsLocalizer,
+  type Components,
+  type HeaderProps,
   type stringOrDate,
   type ToolbarProps,
   type View,
 } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay, getTime } from "date-fns";
-import { enUS } from "date-fns/locale/en-US";
-import { Stack } from "@mui/material";
+import { enUS, el } from "date-fns/locale";
+import { Stack, Typography } from "@mui/material";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { useCallback, useMemo, useState } from "react";
@@ -16,6 +18,7 @@ import Toolbar from "./components/toolbar";
 
 const locales = {
   en: enUS,
+  el: el,
 };
 
 const localizer = dateFnsLocalizer({
@@ -31,14 +34,6 @@ const CalendarView = () => {
   const { t, i18n } = useTranslation();
 
   const messages = {
-    today: t("calendar.today"),
-    previous: t("calendar.previous"),
-    next: t("calendar.next"),
-    month: t("calendar.month"),
-    week: t("calendar.week"),
-    day: t("calendar.day"),
-    agenda: t("calendar.agenda"),
-    date: t("calendar.date"),
     time: t("calendar.time"),
     event: t("calendar.event"),
     noEventsInRange: t("calendar.noEventsInRange"),
@@ -49,8 +44,8 @@ const CalendarView = () => {
   const events = [
     {
       title: "Test Event",
-      start: new Date("2026-06-19"),
-      end: new Date("2026-06-19"),
+      start: new Date("2026-06-19T12:00:00"),
+      end: new Date("2026-06-19T15:00:00"),
     },
   ];
   const [date, setDate] = useState<stringOrDate>(new Date());
@@ -62,7 +57,7 @@ const CalendarView = () => {
 
   const onView = useCallback((newView: View) => setView(newView), [setView]);
 
-  const components = useMemo(() => {
+  const components: Components = useMemo(() => {
     return {
       toolbar: (
         data: ToolbarProps<
@@ -74,12 +69,27 @@ const CalendarView = () => {
           object
         >,
       ) => <Toolbar {...data} />,
+      month: {
+        header: (data: HeaderProps) => (
+          <Typography variant="body1" key={data.date.getDay()}>
+            {t(`calendar.days.${data.date.getDay()}`)}
+          </Typography>
+        ),
+      },
+      week: {
+        header: (data: HeaderProps) => (
+          <Typography variant="body1" key={data.date.getDay()}>
+            {t(`calendar.days.${data.date.getDay()}`)} {data.date.getDate()}
+          </Typography>
+        ),
+      },
     };
   }, []);
 
   return (
     <Stack sx={{ width: "100%", p: 4 }}>
       <Calendar
+        date={date}
         culture={culture}
         messages={messages}
         view={view}
@@ -87,11 +97,25 @@ const CalendarView = () => {
         localizer={localizer}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: "calc(100vh - 64px)", width: "100%" }}
+        style={{
+          height: "calc(100vh - 64px)",
+          width: "100%",
+        }}
         onView={onView}
         defaultDate={date}
         onNavigate={onNavigate}
-        components={components}
+        components={
+          components as
+            | Components<
+                {
+                  title: string;
+                  start: Date;
+                  end: Date;
+                },
+                object
+              >
+            | undefined
+        }
       />
     </Stack>
   );

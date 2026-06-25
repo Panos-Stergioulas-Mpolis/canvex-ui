@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { Button, IconButton, Stack } from "@mui/material";
+import { Button, ButtonGroup, IconButton, Stack } from "@mui/material";
 import type { FC } from "react";
 import type { ToolbarProps } from "react-big-calendar";
 import { useTranslation } from "react-i18next";
@@ -15,12 +15,12 @@ const Toolbar: FC<
   >
 > = (props) => {
   const { t } = useTranslation();
-  const { label, onNavigate } = props;
+  const { label, onNavigate, onView } = props;
   return (
     <Stack direction="row" sx={{ alignItems: "center", gap: 2, mb: 2 }}>
       <Button
         size="small"
-        startIcon={<Icon icon="fluent-mdl2:goto-today" />}
+        startIcon={<Icon icon="material-symbols:today" />}
         variant="outlined"
         onClick={() => onNavigate("TODAY")}
         sx={{
@@ -40,6 +40,68 @@ const Toolbar: FC<
         </IconButton>
       </Stack>
       {label}
+      <ButtonGroup variant="outlined" size="small" sx={{ ml: "auto" }}>
+        <Button
+          onClick={() => onView("day")}
+          startIcon={
+            <Icon icon="material-symbols:calendar-today-outline-rounded" />
+          }
+          sx={{
+            width: "fit-content",
+            color: "common.white",
+            borderColor: "common.white",
+          }}
+        >
+          {t("buttons.day")}
+        </Button>
+        <Button
+          onClick={() => onView("week")}
+          startIcon={<Icon icon="material-symbols:view-week-outline" />}
+          sx={{
+            width: "fit-content",
+            color: "common.white",
+            borderColor: "common.white",
+          }}
+        >
+          {t("buttons.week")}
+        </Button>
+        <Button
+          onClick={() => onView("month")}
+          startIcon={
+            <Icon icon="material-symbols:calendar-month-outline-rounded" />
+          }
+          sx={{
+            width: "fit-content",
+            color: "common.white",
+            borderColor: "common.white",
+          }}
+        >
+          {t("buttons.month")}
+        </Button>
+        <Button
+          onClick={() => onView("agenda")}
+          startIcon={<Icon icon="material-symbols:view-agenda-outline" />}
+          sx={{
+            width: "fit-content",
+            color: "common.white",
+            borderColor: "common.white",
+          }}
+        >
+          {t("buttons.agenda")}
+        </Button>
+      </ButtonGroup>
+      <Button
+        startIcon={<Icon icon="material-symbols:add-2" />}
+        variant="outlined"
+        size="small"
+        sx={{
+          width: "fit-content",
+          color: "common.white",
+          borderColor: "common.white",
+        }}
+      >
+        {t("buttons.createEvent")}
+      </Button>
     </Stack>
   );
 };

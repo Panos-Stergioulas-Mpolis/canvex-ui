@@ -11,7 +11,8 @@
     "month": "Month",
     "week": "Week",
     "day": "Day",
-    "agenda": "Agenda"
+    "agenda": "Agenda",
+    "createEvent": "Create event"
   },
   "layouts": {
     "auth": {
@@ -49,6 +50,15 @@
     "date": "Date",
     "time": "Time",
     "event": "Event",
-    "noEventsInRange": "No events in range"
+    "noEventsInRange": "No events in range",
+    "days": {
+      "0": "Sunday",
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    }
   }
 }

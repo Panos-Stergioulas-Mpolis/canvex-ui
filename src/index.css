@@ -63,9 +63,6 @@
 .rbc-header {
   padding: 12px !important;
   text-align: left !important;
-  font-family: var(--secondaryFont) !important;
-  line-height: 1.3 !important;
-  font-size: 16px !important;
   border-color: var(--calendar-border) !important;
 }
 
@@ -81,15 +78,47 @@
   font-size: 24px;
 }
 
-.rbc-month-view {
+.rbc-month-view,
+.rbc-time-view {
   border-color: var(--calendar-border) !important;
   border-radius: 4px;
 }
 
-.rbc-month-row {
+.rbc-month-row,
+.rbc-events-container,
+.rbc-time-header-content,
+.rbc-time-header,
+.rbc-timeslot-group,
+.rbc-time-slot {
   border-color: var(--calendar-border) !important;
 }
 
 .rbc-time-slot {
   min-height: 80px;
+}
+
+.rbc-timeslot-group > div:first-child {
+  border: none !important;
+}
+
+.rbc-time-content {
+  border-top: 1px solid var(--calendar-border) !important;
+  scrollbar-color: red !important;
+}
+
+.rbc-agenda-date-cell {
+  border-right: 1px solid var(--calendar-border) !important;
+}
+
+.rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td,
+.rbc-agenda-view table.rbc-agenda-table tbody > tr + tr {
+  border-color: var(--calendar-border) !important;
+}
+
+.rbc-agenda-view table.rbc-agenda-table {
+  border: 1px solid var(--calendar-border) !important;
+}
+
+.rbc-allday-cell {
+  display: none;
 }
