@@ -1,0 +1,1 @@
+import{i as e,t}from"./index.esm-DXY4ZjvA.js";var n=e(),r=()=>(0,n.jsx)(n.Fragment,{children:`403`}),i=()=>(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(t,{children:(0,n.jsx)(`title`,{children:`403`})}),(0,n.jsx)(r,{})]});export{i as default};
