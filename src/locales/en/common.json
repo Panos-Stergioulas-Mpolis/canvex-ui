@@ -4,7 +4,17 @@
     "signIn": "Sign in",
     "forgotPassword": "Forgot password?",
     "continueWithGoogle": "Continue with Google",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "today": "Today",
+    "previous": "Previous",
+    "next": "Next",
+    "month": "Month",
+    "week": "Week",
+    "day": "Day",
+    "agenda": "Agenda",
+    "createEvent": "Create event",
+    "cancel": "Cancel",
+    "create": "Create"
   },
   "layouts": {
     "auth": {
@@ -37,5 +47,31 @@
     },
     "or": "or",
     "dontHaveAnAccount": "Don't have an account?"
+  },
+  "calendar": {
+    "date": "Date",
+    "time": "Time",
+    "event": "Event",
+    "noEventsInRange": "No events in range",
+    "days": {
+      "0": "Sunday",
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    },
+    "createEvent": {
+      "title": "Create Event"
+    },
+    "createEventForm": {
+      "title": "Title",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "description": "Description"
+    }
   }
 }

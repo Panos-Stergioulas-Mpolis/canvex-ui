@@ -5,9 +5,9 @@ import SideBar from "./components/side-bar";
 const MainLayout: FC<PropsWithChildren> = (props) => {
   const { children } = props;
   return (
-    <Stack direction="row">
+    <Stack direction="row" sx={{ width: "100vw" }}>
       <SideBar />
-      <Stack>{children}</Stack>
+      <Stack sx={{ width: "100%" }}>{children}</Stack>
     </Stack>
   );
 };

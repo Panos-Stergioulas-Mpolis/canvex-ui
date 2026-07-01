@@ -8,17 +8,20 @@ import { Provider as ReduxProvider } from "react-redux";
 import { setupStore } from "./store/store";
 import { Suspense } from "react";
 import LoadingScreen from "./components/loading-screen";
+import LocalizationProvider from "./locales/localization-provider";
 
 const App = () => {
   return (
     <ReduxProvider store={setupStore()}>
       <ThemeProvider>
         <I18nextProvider i18n={i18n}>
-          <HelmetProvider>
-            <Suspense fallback={<LoadingScreen />}>
-              <RouterProvider router={router} />
-            </Suspense>
-          </HelmetProvider>
+          <LocalizationProvider>
+            <HelmetProvider>
+              <Suspense fallback={<LoadingScreen />}>
+                <RouterProvider router={router} />
+              </Suspense>
+            </HelmetProvider>{" "}
+          </LocalizationProvider>
         </I18nextProvider>
       </ThemeProvider>
     </ReduxProvider>
