@@ -3,6 +3,7 @@ import { Button, ButtonGroup, IconButton, Stack } from "@mui/material";
 import type { FC } from "react";
 import type { ToolbarProps } from "react-big-calendar";
 import { useTranslation } from "react-i18next";
+import CreateEvent from "../create-event";
 
 const Toolbar: FC<
   ToolbarProps<
@@ -90,18 +91,7 @@ const Toolbar: FC<
           {t("buttons.agenda")}
         </Button>
       </ButtonGroup>
-      <Button
-        startIcon={<Icon icon="material-symbols:add-2" />}
-        variant="outlined"
-        size="small"
-        sx={{
-          width: "fit-content",
-          color: "common.white",
-          borderColor: "common.white",
-        }}
-      >
-        {t("buttons.createEvent")}
-      </Button>
+      <CreateEvent />
     </Stack>
   );
 };

@@ -18,7 +18,7 @@ const resources = {
     validation: validation_en,
     meta: meta_en,
   },
-  else: {
+  el: {
     common: common_el,
     validation: validation_el,
     meta: meta_el,
