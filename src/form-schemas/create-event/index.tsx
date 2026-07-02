@@ -12,6 +12,9 @@ export const createCreateEventSchema = (t: TFunction) => {
       t("startTime.required", { ns: "validation" }),
     ),
     endTime: Yup.string().required(t("endTime.required", { ns: "validation" })),
+    description: Yup.string().required(
+      t("description.required", { ns: "validation" }),
+    ),
   });
 };
 

@@ -32,6 +32,7 @@ const SignInForm = () => {
   };
 
   const handleSubmit: SubmitHandler<SignInInputs> = async (data) => {
+    console.log(data);
     navigate(paths.board);
   };
   return (

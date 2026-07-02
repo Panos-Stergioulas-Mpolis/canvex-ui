@@ -16,7 +16,6 @@ import {
   createEventDefaultValues,
 } from "src/form-schemas/create-event";
 import type { CreateEventInputs } from "src/types/index";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import CustomDatePicker from "src/components/custom-date-picker";
 import CustomTimePicker from "src/components/custom-time-picker";
 
@@ -36,6 +35,7 @@ const CreateEventForm: FC<CreateEventFormProps> = (props) => {
   } = methods;
 
   const handleSubmit: SubmitHandler<CreateEventInputs> = async (data) => {
+    console.log(data);
     handleToggle(false);
   };
 
