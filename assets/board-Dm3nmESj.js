@@ -1,1 +1,0 @@
-import{i as e,t}from"./index.esm-DXY4ZjvA.js";import{p as n}from"./index-C89foam2.js";var r=e(),i=()=>(0,r.jsx)(r.Fragment,{children:`board`}),a=()=>{let{t:e}=n();return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(t,{children:(0,r.jsx)(`title`,{children:e(`titles.board`,{ns:`meta`})})}),(0,r.jsx)(i,{})]})};export{a as default};
