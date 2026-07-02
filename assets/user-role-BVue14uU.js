@@ -1,1 +1,0 @@
-import{i as e,t}from"./index.esm-DXY4ZjvA.js";import{p as n}from"./index-sgr59Epl.js";var r=e(),i=()=>(0,r.jsx)(r.Fragment,{children:`user role`}),a=()=>{let{t:e}=n();return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(t,{children:(0,r.jsx)(`title`,{children:e(`titles.userRole`,{ns:`meta`})})}),(0,r.jsx)(i,{})]})};export{a as default};
