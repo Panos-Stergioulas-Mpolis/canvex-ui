@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createHashRouter } from "react-router-dom";
 
 import paths from "src/routes/routes";
 
@@ -13,6 +13,6 @@ export const routes = [
   { path: "*", element: <Navigate to={paths.page404} replace /> },
 ];
 
-const router = createBrowserRouter(routes, { basename: "/" });
+const router = createHashRouter(routes, { basename: "/" });
 
 export default router;
