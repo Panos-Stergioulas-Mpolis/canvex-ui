@@ -5,7 +5,7 @@ describe("<CalendarView />", () => {
   it("should render correctly", () => {
     render(<CalendarView />);
 
-    const today = screen.getByRole("button", { name: /today/i });
-    expect(today).toBeInTheDocument();
+    const defaultView = screen.getByRole("table", { name: /month view/i });
+    expect(defaultView).toBeInTheDocument();
   });
 });
