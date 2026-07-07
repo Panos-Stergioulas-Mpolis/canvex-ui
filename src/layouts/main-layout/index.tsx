@@ -7,7 +7,7 @@ const MainLayout: FC<PropsWithChildren> = (props) => {
   return (
     <Stack direction="row" sx={{ width: "100vw" }}>
       <SideBar />
-      <Stack sx={{ width: "100%" }}>{children}</Stack>
+      <Stack sx={{ width: "100%", overflow: "hidden" }}>{children}</Stack>
     </Stack>
   );
 };

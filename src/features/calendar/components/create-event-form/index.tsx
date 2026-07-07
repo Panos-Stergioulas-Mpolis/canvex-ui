@@ -5,6 +5,8 @@ import {
   DialogContent,
   Divider,
   Stack,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import type { FC } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
@@ -26,6 +28,9 @@ type CreateEventFormProps = {
 const CreateEventForm: FC<CreateEventFormProps> = (props) => {
   const { handleToggle } = props;
   const { t } = useTranslation();
+  const theme = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+
   const methods = useForm<CreateEventInputs>({
     resolver: yupResolver(createCreateEventSchema(t)),
     defaultValues: createEventDefaultValues,
@@ -48,7 +53,7 @@ const CreateEventForm: FC<CreateEventFormProps> = (props) => {
             label={t("calendar.createEventForm.title")}
           />
           <Stack
-            direction="row"
+            direction={mdUp ? "row" : "column"}
             sx={{ alignItems: "center", gap: 2, width: "100%" }}
           >
             <CustomDatePicker
@@ -63,7 +68,7 @@ const CreateEventForm: FC<CreateEventFormProps> = (props) => {
             />
           </Stack>
           <Stack
-            direction="row"
+            direction={mdUp ? "row" : "column"}
             sx={{ alignItems: "center", gap: 2, width: "100%" }}
           >
             <CustomTimePicker

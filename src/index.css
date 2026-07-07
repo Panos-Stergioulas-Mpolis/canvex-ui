@@ -122,3 +122,11 @@
 .rbc-allday-cell {
   display: none;
 }
+
+.rbc-month-view,
+.rbc-time-view,
+.rbc-week-view,
+.rbc-agenda-view {
+  min-width: 900px;
+  margin-top: 56px;
+}

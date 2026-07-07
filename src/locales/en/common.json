@@ -72,6 +72,7 @@
       "startTime": "Start time",
       "endTime": "End time",
       "description": "Description"
-    }
+    },
+    "rotatePhone": "Please rotate your phone to see calendar!"
   }
 }
