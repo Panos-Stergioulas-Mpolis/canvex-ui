@@ -9,7 +9,7 @@ import {
 } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay, getTime } from "date-fns";
 import { enUS, el } from "date-fns/locale";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { useCallback, useMemo, useState } from "react";
@@ -32,6 +32,8 @@ const localizer = dateFnsLocalizer({
 
 const CalendarView = () => {
   const { t, i18n } = useTranslation();
+  const theme = useTheme();
+  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const messages = {
     time: t("calendar.time"),
@@ -100,6 +102,7 @@ const CalendarView = () => {
         style={{
           height: "calc(100vh - 64px)",
           width: "100%",
+          overflowX: mdDown ? "scroll" : "auto",
         }}
         onView={onView}
         defaultDate={date}

@@ -12,5 +12,6 @@
   "startDate": { "required": "Start date is required" },
   "endDate": { "required": "End date is required" },
   "startTime": { "required": "Start time is required" },
-  "endTime": { "required": "End time is required" }
+  "endTime": { "required": "End time is required" },
+  "description": { "required": "Description is required" }
 }

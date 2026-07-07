@@ -18,3 +18,7 @@ export type CreateEventInputs = {
   endTime: string;
   description: string;
 };
+
+export type GlobalSliceInitialState = {
+  isSideBarOpen: boolean;
+};
