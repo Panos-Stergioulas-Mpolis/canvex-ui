@@ -76,10 +76,10 @@ const Toolbar: FC<
         </IconButton>
       )}
       <Stack direction="row" sx={{ gap: 0.5 }}>
-        <IconButton onClick={() => onNavigate("PREV")}>
+        <IconButton onClick={() => onNavigate("PREV")} aria-label="previous">
           <Icon icon="simple-line-icons:arrow-up" width={16} />
         </IconButton>
-        <IconButton onClick={() => onNavigate("NEXT")}>
+        <IconButton onClick={() => onNavigate("NEXT")} aria-label="next">
           <Icon icon="simple-line-icons:arrow-down" width={16} />
         </IconButton>
       </Stack>
