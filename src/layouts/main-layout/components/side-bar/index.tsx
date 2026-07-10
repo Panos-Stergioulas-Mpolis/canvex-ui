@@ -65,11 +65,11 @@ const Drawer = styled(MuiDrawer, {
 const SideBar = () => {
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
-  const [isSidebarOpen, setIsSideBarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
 
   const toggle = () => {
-    setIsSideBarOpen(!isSidebarOpen);
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
