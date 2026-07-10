@@ -3,7 +3,7 @@ import {
   elGR as elGRDate,
 } from "@mui/x-date-pickers/locales";
 
-import { enUS as enUSAdapter, el as elAdapter } from "date-fns/locale";
+import { enGB as enGBAdapter, el as elAdapter } from "date-fns/locale";
 
 export const allLangs = [
   {
@@ -14,7 +14,7 @@ export const allLangs = [
         ...enUSDate.components,
       },
     },
-    adapterLocale: enUSAdapter,
+    adapterLocale: enGBAdapter,
     icon: "flagpack:gb-ukm",
   },
   {

@@ -1,11 +1,21 @@
 import { Icon } from "@iconify/react";
-import { Button, Dialog, DialogTitle, Divider } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  Divider,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import CreateEventForm from "../create-event-form";
 
 const CreateEvent = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
+  const smUp = useMediaQuery(theme.breakpoints.up("sm"));
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = (state: boolean) => {
@@ -13,19 +23,29 @@ const CreateEvent = () => {
   };
   return (
     <>
-      <Button
-        onClick={() => handleToggle(true)}
-        startIcon={<Icon icon="material-symbols:add-2" />}
-        variant="outlined"
-        size="small"
-        sx={{
-          width: "fit-content",
-          color: "common.white",
-          borderColor: "common.white",
-        }}
-      >
-        {t("buttons.createEvent")}
-      </Button>
+      {smUp ? (
+        <Button
+          onClick={() => handleToggle(true)}
+          startIcon={<Icon icon="material-symbols:add-2" />}
+          variant="outlined"
+          size="small"
+          sx={{
+            width: "fit-content",
+            color: "common.white",
+            borderColor: "common.white",
+            ml: "auto",
+          }}
+        >
+          {t("buttons.createEvent")}
+        </Button>
+      ) : (
+        <IconButton
+          sx={{ color: "common.white", ml: "auto" }}
+          onClick={() => handleToggle(true)}
+        >
+          <Icon icon="material-symbols:add-2" width={18} />
+        </IconButton>
+      )}
       <Dialog
         open={isOpen}
         fullWidth

@@ -17,9 +17,7 @@ import NavItem from "../nav-item";
 import NavGroup from "../nav-group";
 import UserBubble from "../user-buble";
 import { useLocation } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "src/store/store";
-import { selectIsSideBarOpen } from "src/store/global/global-selectors";
-import { setIsSideBarOpen } from "src/store/global/global-slice";
+import { useState } from "react";
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: DRAWER_WIDTH,
@@ -67,12 +65,11 @@ const Drawer = styled(MuiDrawer, {
 const SideBar = () => {
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
-  const isSidebarOpen = useAppSelector(selectIsSideBarOpen);
-  const dispatch = useAppDispatch();
+  const [isSidebarOpen, setIsSideBarOpen] = useState(false);
   const location = useLocation();
 
   const toggle = () => {
-    dispatch(setIsSideBarOpen(!isSidebarOpen));
+    setIsSideBarOpen(!isSidebarOpen);
   };
 
   return (
