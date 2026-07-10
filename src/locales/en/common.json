@@ -8,13 +8,10 @@
     "today": "Today",
     "previous": "Previous",
     "next": "Next",
-    "month": "Month",
-    "week": "Week",
-    "day": "Day",
-    "agenda": "Agenda",
     "createEvent": "Create event",
     "cancel": "Cancel",
-    "create": "Create"
+    "create": "Create",
+    "close": "Close"
   },
   "layouts": {
     "auth": {

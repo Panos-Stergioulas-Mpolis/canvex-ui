@@ -55,31 +55,6 @@ describe("<Toolbar />", () => {
     expect(label).toBeInTheDocument();
   });
 
-  it("should render all the view buttons and call the monOnView whn they get clicked", async () => {
-    const user = userEvent.setup();
-    render(<Toolbar {...mockProps} />);
-
-    const dayView = screen.getByRole("button", { name: "Day" });
-    expect(dayView).toBeInTheDocument();
-    await user.click(dayView);
-    expect(mockOnView).toHaveBeenCalledTimes(1);
-
-    const weekView = screen.getByRole("button", { name: /week/i });
-    expect(weekView).toBeInTheDocument();
-    await user.click(weekView);
-    expect(mockOnView).toHaveBeenCalledTimes(2);
-
-    const monthView = screen.getByRole("button", { name: /month/i });
-    expect(monthView).toBeInTheDocument();
-    await user.click(monthView);
-    expect(mockOnView).toHaveBeenCalledTimes(3);
-
-    const agendaView = screen.getByRole("button", { name: /agenda/i });
-    expect(agendaView).toBeInTheDocument();
-    await user.click(agendaView);
-    expect(mockOnView).toHaveBeenCalledTimes(4);
-  });
-
   it("should render the next and previous button and call the mockOnNavigate when they get clicked", async () => {
     const user = userEvent.setup();
     render(<Toolbar {...mockProps} />);

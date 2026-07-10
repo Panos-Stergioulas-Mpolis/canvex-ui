@@ -2,22 +2,26 @@ import {
   Calendar,
   dateFnsLocalizer,
   type Components,
+  type EventProps,
   type HeaderProps,
+  type ShowMoreProps,
   type stringOrDate,
   type ToolbarProps,
-  type View,
 } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay, getTime } from "date-fns";
-import { enUS, el } from "date-fns/locale";
-import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { enGB, el } from "date-fns/locale";
+import { Stack, Typography } from "@mui/material";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Toolbar from "./components/toolbar";
+import { Event } from "./components/event";
+import ShowMore from "./components/show-more";
+import { mockEvents } from "src/mock-data";
 
 const locales = {
-  en: enUS,
+  en: enGB,
   el: el,
 };
 
@@ -32,9 +36,6 @@ const localizer = dateFnsLocalizer({
 
 const CalendarView = () => {
   const { t, i18n } = useTranslation();
-  const theme = useTheme();
-  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
-
   const messages = {
     time: t("calendar.time"),
     event: t("calendar.event"),
@@ -42,14 +43,7 @@ const CalendarView = () => {
   };
 
   const culture = i18n.language === "el" ? "el" : "en-US";
-  const [view, setView] = useState<View>("month");
-  const events = [
-    {
-      title: "Test Event",
-      start: new Date("2026-06-19T12:00:00"),
-      end: new Date("2026-06-19T15:00:00"),
-    },
-  ];
+
   const [date, setDate] = useState<stringOrDate>(new Date());
 
   const onNavigate = useCallback(
@@ -57,10 +51,10 @@ const CalendarView = () => {
     [setDate],
   );
 
-  const onView = useCallback((newView: View) => setView(newView), [setView]);
-
   const components: Components = useMemo(() => {
     return {
+      showMore: (data: ShowMoreProps) => <ShowMore {...data} />,
+      event: (data: EventProps) => <Event {...data} />,
       toolbar: (
         data: ToolbarProps<
           {
@@ -94,31 +88,18 @@ const CalendarView = () => {
         date={date}
         culture={culture}
         messages={messages}
-        view={view}
-        events={events}
+        view={"month"}
+        events={mockEvents}
         localizer={localizer}
         startAccessor="start"
         endAccessor="end"
         style={{
           height: "calc(100vh - 64px)",
           width: "100%",
-          overflowX: mdDown ? "scroll" : "auto",
         }}
-        onView={onView}
         defaultDate={date}
         onNavigate={onNavigate}
-        components={
-          components as
-            | Components<
-                {
-                  title: string;
-                  start: Date;
-                  end: Date;
-                },
-                object
-              >
-            | undefined
-        }
+        components={components}
       />
     </Stack>
   );
