@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import UserListView from "src/features/user-list";
 
 const UserListPage = () => {
-  const { t } = useTranslation();
+  const { t } = useLocales();
   return (
     <>
       <Helmet>

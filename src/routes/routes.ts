@@ -10,6 +10,7 @@ const paths = {
   chat: "/chat",
   userList: "/user-list",
   userRole: "/user-role",
+  settings: "/settings",
 };
 
 export default paths;

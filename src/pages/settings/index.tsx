@@ -1,18 +1,18 @@
 import { Helmet } from "react-helmet-async";
 import useLocales from "src/locales/use-locales";
-import SignInView from "src/features/sign-in";
+import SettingsView from "src/features/settings";
 
-const SignInPage = () => {
+const SettingsPage = () => {
   const { t } = useLocales();
   return (
     <>
       <Helmet>
-        <title>{t("titles.signIn", { ns: "meta" })}</title>
+        <title>{t("titles.settings", { ns: "meta" })}</title>
       </Helmet>
 
-      <SignInView />
+      <SettingsView />
     </>
   );
 };
 
-export default SignInPage;
+export default SettingsPage;

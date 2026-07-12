@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import { alpha, Button } from "@mui/material";
 import type { FC } from "react";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import { Link } from "react-router-dom";
 
 type NacItemProps = {
@@ -14,7 +14,7 @@ type NacItemProps = {
 
 const NavItem: FC<NacItemProps> = (props) => {
   const { label, isOpen, icon, isSelected, link } = props;
-  const { t } = useTranslation();
+  const { t } = useLocales();
 
   return (
     <Button

@@ -14,7 +14,7 @@ import { Stack, Typography } from "@mui/material";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import { useCallback, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import Toolbar from "./components/toolbar";
 import { Event } from "./components/event";
 import ShowMore from "./components/show-more";
@@ -35,14 +35,14 @@ const localizer = dateFnsLocalizer({
 });
 
 const CalendarView = () => {
-  const { t, i18n } = useTranslation();
+  const { t, currentLang } = useLocales();
   const messages = {
     time: t("calendar.time"),
     event: t("calendar.event"),
     noEventsInRange: t("calendar.noEventsInRange"),
   };
 
-  const culture = i18n.language === "el" ? "el" : "en-US";
+  const culture = currentLang.value === "el" ? "el" : "en-US";
 
   const [date, setDate] = useState<stringOrDate>(new Date());
 
@@ -83,7 +83,7 @@ const CalendarView = () => {
   }, []);
 
   return (
-    <Stack sx={{ width: "100%", p: 4 }}>
+    <Stack sx={{ width: "100%" }}>
       <Calendar
         date={date}
         culture={culture}

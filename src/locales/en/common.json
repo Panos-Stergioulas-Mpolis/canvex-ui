@@ -32,7 +32,8 @@
       "chat": "Chat",
       "users": "Users",
       "userList": "User List",
-      "userRole": "User Role"
+      "userRole": "User Role",
+      "settings": "Settings"
     }
   },
   "signIn": {
@@ -71,5 +72,14 @@
       "description": "Description"
     },
     "rotatePhone": "Please rotate your phone to see calendar!"
+  },
+  "settings": {
+    "languagesAndTimeZones": {
+      "title": "Languages & Timezones",
+      "subtitle": "Change the language and timezone to match the ones that suit your needs.",
+      "language": "Language",
+      "timezone": "Timezone"
+    },
+    "appearance": "Appearance"
   }
 }

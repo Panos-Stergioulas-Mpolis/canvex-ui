@@ -6,7 +6,7 @@ import {
   useTheme,
 } from "@mui/material";
 import type { FC, PropsWithChildren } from "react";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import Logo from "src/components/logo";
 import LeftSideItem from "./components/left-side-item";
 import { Icon } from "@iconify/react";
@@ -14,7 +14,7 @@ import { Icon } from "@iconify/react";
 const AuthLayout: FC<PropsWithChildren> = (props) => {
   const { children } = props;
 
-  const { t } = useTranslation();
+  const { t } = useLocales();
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
 

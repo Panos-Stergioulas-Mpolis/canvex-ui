@@ -1,12 +1,12 @@
 import { Button, Divider, Stack, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import SignInForm from "./components/sign-in-form";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import paths from "src/routes/routes";
 
 const SignInView = () => {
-  const { t } = useTranslation();
+  const { t } = useLocales();
   return (
     <Stack sx={{ gap: 5, width: "100%", maxWidth: 600 }}>
       <Stack sx={{ gap: 1 }}>

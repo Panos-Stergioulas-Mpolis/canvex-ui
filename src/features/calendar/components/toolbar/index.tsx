@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { type FC } from "react";
 import type { ToolbarProps } from "react-big-calendar";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import CreateEvent from "../create-event";
 
 const Toolbar: FC<
@@ -21,7 +21,7 @@ const Toolbar: FC<
     object
   >
 > = (props) => {
-  const { t } = useTranslation();
+  const { t } = useLocales();
   const theme = useTheme();
   const smUp = useMediaQuery(theme.breakpoints.up("sm"));
   const { label, onNavigate } = props;

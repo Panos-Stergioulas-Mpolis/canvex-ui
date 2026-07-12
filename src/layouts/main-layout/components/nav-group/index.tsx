@@ -9,7 +9,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useState, type FC } from "react";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import { useLocation } from "react-router-dom";
 import NavItem from "../nav-item";
 
@@ -22,7 +22,7 @@ type NavGroupProps = {
 
 const NavGroup: FC<NavGroupProps> = (props) => {
   const { isOpen, icon, label, subItems } = props;
-  const { t } = useTranslation();
+  const { t } = useLocales();
   const location = useLocation();
   const [isButtonOpened, setIsButtonOpened] = useState(false);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);

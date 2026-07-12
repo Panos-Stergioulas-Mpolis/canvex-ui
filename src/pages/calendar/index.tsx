@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import CalendarView from "src/features/calendar";
 
 const CalendarPage = () => {
-  const { t } = useTranslation();
+  const { t } = useLocales();
   return (
     <>
       <Helmet>

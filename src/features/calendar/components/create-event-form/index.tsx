@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import type { FC } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import CustomTextField from "src/components/custom-text-field";
 import FormProvider from "src/components/form-provider";
 import {
@@ -27,7 +27,7 @@ type CreateEventFormProps = {
 
 const CreateEventForm: FC<CreateEventFormProps> = (props) => {
   const { handleToggle } = props;
-  const { t } = useTranslation();
+  const { t } = useLocales();
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
 

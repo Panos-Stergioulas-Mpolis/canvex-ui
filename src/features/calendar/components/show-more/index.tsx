@@ -8,14 +8,14 @@ import {
 } from "@mui/material";
 import { useState, type FC } from "react";
 import type { ShowMoreProps } from "react-big-calendar";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import { formatDateAndTime } from "src/utils/formats";
 import EventsGroup from "../events-group";
 
 const ShowMore: FC<ShowMoreProps> = (props) => {
   const { count, events, slotDate } = props;
 
-  const { t } = useTranslation();
+  const { t } = useLocales();
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 

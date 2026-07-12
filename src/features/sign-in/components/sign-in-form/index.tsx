@@ -3,7 +3,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import FormProvider from "src/components/form-provider";
 import type { SignInInputs } from "src/types/index";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import {
   createSignInSchema,
   signInDefaultValues,
@@ -16,7 +16,7 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 
 const SignInForm = () => {
-  const { t } = useTranslation();
+  const { t } = useLocales();
   const navigate = useNavigate();
   const [isPassword, setIsPassword] = useState(true);
   const methods = useForm<SignInInputs>({

@@ -1,13 +1,13 @@
 import { Button, Card, Stack } from "@mui/material";
 import type { FC, PropsWithChildren } from "react";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import { Link as RouterLink } from "react-router-dom";
 import paths from "src/routes/routes";
 
 const ErrorLayout: FC<PropsWithChildren> = (props) => {
   const { children } = props;
 
-  const { t } = useTranslation();
+  const { t } = useLocales();
 
   return (
     <Stack

@@ -12,10 +12,11 @@ export const menuItems: MenuItemsType[] = [
     icon: "quill:calendar",
     link: paths.calendar,
   },
+  { label: "navItems.labels.chat", icon: "tabler:messages", link: paths.chat },
   {
-    label: "navItems.labels.chat",
-    icon: "tabler:messages",
-    link: paths.chat,
+    label: "navItems.labels.settings",
+    icon: "tabler:settings",
+    link: paths.settings,
   },
   {
     label: "navItems.labels.users",

@@ -1,7 +1,7 @@
-import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
-import { allLangs, defaultLang } from './languages';
+import { allLangs, defaultLang } from "./languages";
 
 export default function useLocales() {
   const { i18n, t } = useTranslation();
@@ -15,7 +15,7 @@ export default function useLocales() {
     (newlang: string) => {
       i18n.changeLanguage(newlang);
     },
-    [i18n]
+    [i18n],
   );
 
   return {

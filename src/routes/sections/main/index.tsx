@@ -9,6 +9,7 @@ import paths from "src/routes/routes";
 const BoardPage = lazy(() => import("src/pages/board"));
 const CalendarPage = lazy(() => import("src/pages/calendar"));
 const ChatPage = lazy(() => import("src/pages/chat"));
+const SettingsPage = lazy(() => import("src/pages/settings"));
 const UserListPage = lazy(() => import("src/pages/user-list"));
 const UserRolePage = lazy(() => import("src/pages/user-role"));
 
@@ -26,6 +27,7 @@ const mainRoutes = [
       { path: paths.board, element: <BoardPage /> },
       { path: paths.chat, element: <ChatPage /> },
       { path: paths.calendar, element: <CalendarPage /> },
+      { path: paths.settings, element: <SettingsPage /> },
       { path: paths.userList, element: <UserListPage /> },
       { path: paths.userRole, element: <UserRolePage /> },
     ],

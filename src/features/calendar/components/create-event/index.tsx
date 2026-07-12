@@ -9,11 +9,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import useLocales from "src/locales/use-locales";
 import CreateEventForm from "../create-event-form";
 
 const CreateEvent = () => {
-  const { t } = useTranslation();
+  const { t } = useLocales();
   const theme = useTheme();
   const smUp = useMediaQuery(theme.breakpoints.up("sm"));
   const [isOpen, setIsOpen] = useState(false);

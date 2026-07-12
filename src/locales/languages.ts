@@ -26,7 +26,7 @@ export const allLangs = [
       },
     },
     adapterLocale: elAdapter,
-    icon: "flagpack:el",
+    icon: "flagpack:gr",
   },
 ];
 
