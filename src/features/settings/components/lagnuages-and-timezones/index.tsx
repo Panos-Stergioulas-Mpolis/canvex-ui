@@ -11,14 +11,21 @@ import {
   Typography,
   type SelectChangeEvent,
 } from "@mui/material";
+import { TIMEZONES } from "src/constants";
+import { useTimezones } from "src/hooks/use-timezones";
 import { allLangs } from "src/locales/languages";
 import useLocales from "src/locales/use-locales";
 
 const LanguagesAndTimeZones = () => {
   const { t, onChangeLang, currentLang } = useLocales();
+  const { timezone, changeTimezone } = useTimezones();
 
   const handleChange = (e: SelectChangeEvent<string>) => {
     onChangeLang(e.target.value);
+  };
+
+  const handleChangeTimezone = (e: SelectChangeEvent<string>) => {
+    changeTimezone(e.target.value);
   };
   return (
     <Card sx={{ p: 2, display: "flex", flexDirection: "column", gap: 2 }}>
@@ -62,17 +69,18 @@ const LanguagesAndTimeZones = () => {
           </InputLabel>
           <Select
             labelId="select-language"
+            value={timezone}
+            onChange={handleChangeTimezone}
             input={
               <OutlinedInput
                 label={t("settings.languagesAndTimeZones.timezone")}
               />
             }
           >
-            {allLangs.map((lang) => (
-              <MenuItem key={lang.value} value={lang.value}>
+            {TIMEZONES.map((zone) => (
+              <MenuItem key={zone} value={zone}>
                 <Stack direction="row" sx={{ alignItems: "center", gap: 1 }}>
-                  <Icon icon={lang.icon} />
-                  {lang.label}
+                  {zone}
                 </Stack>
               </MenuItem>
             ))}

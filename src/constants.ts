@@ -1,2 +1,32 @@
 export const DRAWER_WIDTH = 260;
 export const MIN_DRAWER_WIDTH = 80;
+
+export const TIMEZONES = [
+  "Europe/London",
+  "Europe/Dublin",
+  "Europe/Athens",
+  "Europe/Paris",
+  "Europe/Berlin",
+  "Europe/Madrid",
+  "Europe/Rome",
+  "Europe/Amsterdam",
+  "Europe/Brussels",
+  "Europe/Lisbon",
+  "Europe/Vienna",
+  "Europe/Warsaw",
+  "Europe/Zurich",
+  "Europe/Stockholm",
+  "Europe/Oslo",
+  "Europe/Helsinki",
+  "Europe/Bucharest",
+  "America/New_York",
+  "America/Chicago",
+  "America/Denver",
+  "America/Los_Angeles",
+  "America/Anchorage",
+  "Pacific/Honolulu",
+  "America/Phoenix",
+  "America/Adak",
+  "Pacific/Guam",
+  "America/Puerto_Rico",
+];

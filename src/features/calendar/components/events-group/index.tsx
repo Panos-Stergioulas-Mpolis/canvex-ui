@@ -7,6 +7,8 @@ import {
 } from "@mui/material";
 import type { FC } from "react";
 import type { Event } from "react-big-calendar";
+import { useTimezones } from "src/hooks/use-timezones";
+import useLocales from "src/locales/use-locales";
 import { formatDateAndTime } from "src/utils/formats";
 
 type EventsGroupProps = {
@@ -16,6 +18,9 @@ type EventsGroupProps = {
 
 const EventsGroup: FC<EventsGroupProps> = (props) => {
   const { events, selectedEvent } = props;
+
+  const { timezone } = useTimezones();
+  const { currentLang } = useLocales();
   return (
     <div>
       {events.map((event) => {
@@ -30,8 +35,21 @@ const EventsGroup: FC<EventsGroupProps> = (props) => {
               id={`${event.id}-panel${event.id}-header`}
             >
               <Typography component="span">
-                {event.start && formatDateAndTime(event.start, "HH:mm aa")} -{" "}
-                {event.end && formatDateAndTime(event.end, "HH:mm aa")}{" "}
+                {event.start &&
+                  formatDateAndTime(
+                    event.start,
+                    "HH:mm aa",
+                    timezone,
+                    currentLang.value,
+                  )}{" "}
+                -{" "}
+                {event.end &&
+                  formatDateAndTime(
+                    event.end,
+                    "HH:mm aa",
+                    timezone,
+                    currentLang.value,
+                  )}{" "}
                 {event.title}
               </Typography>
             </AccordionSummary>

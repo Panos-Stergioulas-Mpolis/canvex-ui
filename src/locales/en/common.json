@@ -80,6 +80,11 @@
       "language": "Language",
       "timezone": "Timezone"
     },
-    "appearance": "Appearance"
+    "appearance": {
+      "title": "Appearance",
+      "subtitle": "Change the them and color palette of the application.",
+      "theme": "Theme",
+      "palette": "PAlette"
+    }
   }
 }

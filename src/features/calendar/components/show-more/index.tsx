@@ -11,11 +11,13 @@ import type { ShowMoreProps } from "react-big-calendar";
 import useLocales from "src/locales/use-locales";
 import { formatDateAndTime } from "src/utils/formats";
 import EventsGroup from "../events-group";
+import { useTimezones } from "src/hooks/use-timezones";
 
 const ShowMore: FC<ShowMoreProps> = (props) => {
   const { count, events, slotDate } = props;
 
-  const { t } = useLocales();
+  const { t, currentLang } = useLocales();
+  const { timezone } = useTimezones();
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -37,7 +39,9 @@ const ShowMore: FC<ShowMoreProps> = (props) => {
         + {count}
       </Button>
       <Dialog open={isDialogOpen} onClose={closeDialog} fullWidth maxWidth="md">
-        <DialogTitle>{formatDateAndTime(slotDate, "PPPP")}</DialogTitle>
+        <DialogTitle>
+          {formatDateAndTime(slotDate, "PPPP", timezone, currentLang.value)}
+        </DialogTitle>
         <Divider />
         <DialogContent>
           <EventsGroup events={events} />
